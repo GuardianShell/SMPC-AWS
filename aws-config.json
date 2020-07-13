@@ -1,0 +1,57 @@
+{
+    "mpc" : {
+        "command": "python -m xidiansmpc.demo_batch",
+        "t": 1,
+        "n": 4,
+        "k": 1,
+        "num_faulty_nodes": 0,
+        "num_triples": 1000,
+        "port": 7000
+    },
+
+    "aws":{
+        "setup_file_path": "./aws/setup.sh",
+
+        "region":{
+            "us-east-1": {
+                "vm_count": 2,
+                "security_group_ids": ["your-security_group_ids"],
+                "image_id": "your-ami-id",
+                "key_file_path": "./aws/your-key.pem",
+                "key_name": "your-key"
+            },
+            "sa-east-1": {
+                "vm_count": 1,
+                "security_group_ids": ["your-security_group_ids"],
+                "image_id": "your-ami-id",
+                "key_file_path": "./aws/your-key.pem",
+                "key_name": "your-key"
+            },
+            "eu-central-1": {
+                "vm_count": 1,
+                "security_group_ids": ["your-security_group_ids"],
+                "image_id": "your-ami-id",
+                "key_file_path": "./aws/your-key.pem",
+                "key_name": "your-key"
+            },
+            "ca-central-1": {
+                "vm_count": 1,
+                "security_group_ids": ["your-security_group_ids"],
+                "image_id": "your-ami-id",
+                "key_file_path": "./aws/your-key.pem",
+                "key_name": "your-key"
+            }
+        },
+
+        "vm_name": "xidiansmpc-vms",
+
+        "instance_type": "t2.micro",
+        "instance_user_name": "ubuntu",
+
+        "bucket_name": "xidiansmpc"
+    },
+
+    "docker": {
+        "image_path": "the_image_path:latest"
+    }
+}
